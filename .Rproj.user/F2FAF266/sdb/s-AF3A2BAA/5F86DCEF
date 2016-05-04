@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1462338941527.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5F86DCEF",
+    "lastKnownWriteTime" : 7011605692497750387,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "7v3u8oovgh",
+        "caption" : "proov",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=proov&cache_key=7v3u8oovgh",
+        "displayedObservations" : "6",
+        "environment" : "",
+        "object" : "proov",
+        "totalObservations" : "6",
+        "variables" : "5"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

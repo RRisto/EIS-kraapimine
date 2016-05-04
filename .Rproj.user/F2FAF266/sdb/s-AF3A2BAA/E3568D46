@@ -1,0 +1,18 @@
+{
+    "contents" : "library(rvest)\n\n#url=\"http://eelnoud.valitsus.ee/main/mount/rss/home/submission.rss\"\nurl=\"http://eelnoud.valitsus.ee/main/mount/rss/home/review.rss\"\n\nalgleht <- read_html(url)\n\n#siit saab kõigi eelnõudel lingid kätte\nlingid=algleht%>%\n  html_nodes(\"body channel item guid\")%>%\n  html_text()\n\nurl2=lingid[2]\nurl3=lingid[9]\nurl8=lingid[4578]\n# url5=lingid[55]\n#url8=lingid[4062]\nleht1 <- read_html(url2)\nleht2 <- read_html(url3)\n# leht3=read_html(url4)\n# leht4=read_html(url5)\nleht8=read_html(url8)\n\n#töötab\nkooskõlastused=leht2%>%\n  html_nodes(\"#content > div > div > table > tbody > tr\")%>%\n  html_text()\n\npealkiri=leht2%>%\n  html_nodes(\"#content > div.heading.clear > div > h1\")%>%\n  html_text()\n\ndata=list()\npealkiri=list()\n##loopi proov\nfor (i in 1:100) {\n  leht <- read_html(lingid[i])\n  temp=leht%>%\n    html_nodes(\"#content > div > div > table > tbody > tr >td\")%>%\n    html_text()\n  data[[i]]=temp\n  \n  pealktemp=leht%>%\n    html_nodes(\"#content > div.heading.clear > div > h1\")%>%\n    html_text()\n  pealkiri[[i]]=pealktemp\n}\n\n#loobin kraabitud andmed struktuuri\nkooskolastaja=c()\ntahtaeg=c()\nvastamisaeg=c()\nmarkused=c()\naktinimi=c()\nlink=c()\n\nfor (i in 1:length(data)) {\n  for (j in 1:(length(data[[i]])/6)) {\n    kooskolastaja=append(kooskolastaja, data[[i]][(j-1)*6+2])\n    tahtaeg=append(tahtaeg, data[[i]][(j-1)*6+3])\n    vastamisaeg=append(vastamisaeg, data[[i]][(j-1)*6+4])\n    markused=append(markused, data[[i]][(j-1)*6+5])\n    aktinimi=append(aktinimi, pealkiri[[i]][1])\n    link=append(link, lingid[i])\n  }\n}\n\n\nkoikandmed=data.frame(kooskolastaja, tahtaeg, vastamisaeg, markused, aktinimi,\n                      link)\n\n\n#variant 2, parsin listi kogu sodi, selt grepin välja\ndata=list()\npealkiri=list()\n##loopi proov\n#puhasta lingid ära!!!!\n# for (i in 1:length(lingid)) {\n  for (i in 644:length(lingid)) {\n  leht <- read_html(lingid[i])\n  temp=leht%>%\n    html_nodes(\"#content > div > div > table > tbody > tr \")%>%\n    html_text()\n  data[[i]]=temp\n  \n  pealktemp=leht%>%\n    html_nodes(\"#content > div.heading.clear > div > h1\")%>%\n    html_text()\n  pealkiri[[i]]=pealktemp\n}\n\n#eemdladab elemendid, mis on tühjad\np=lapply(data, function(x) x[x != \"\"])\np=lapply(p, function(x) x[grepl(\"Vaata andmeid|seaduse\",x)==F])\n\n#proovime nüüd listida\nesitaja=lapply(p, function(x) unlist(strsplit(x, \"TĆ¤htaeg:\"))[1])\n\nesitaja2=c()\nfor (i in 1:length(esitaja)) {\n  esitaja2[i]=esitaja[[i]][1]\n}\n#muu sodi, et edasi puhastada\nmuusodi=lapply(p, function(x) unlist(strsplit(x, \"TĆ¤htaeg:\"))[2])\ntahtaeg=lapply(muusodi, function(x) unlist(strsplit(x, \"Vastatud:\"))[1])\ntahtaeg2=c()\nfor (i in 1:length(tahtaeg)) {\n  tahtaeg2[i]=tahtaeg[[i]][1]\n}\n\n\n",
+    "created" : 1462255840134.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3656236672",
+    "id" : "E3568D46",
+    "lastKnownWriteTime" : 1462371931,
+    "path" : "~/R/EIS kraapimine/EIS_kraapimine.R",
+    "project_path" : "EIS_kraapimine.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

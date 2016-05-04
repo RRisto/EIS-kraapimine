@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1462351214245.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "573597F8",
+    "lastKnownWriteTime" : 21392300099829876,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "6e2ik2a8k3",
+        "caption" : "koikandmed",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=koikandmed&cache_key=6e2ik2a8k3",
+        "displayedObservations" : "558",
+        "environment" : "",
+        "object" : "koikandmed",
+        "totalObservations" : "558",
+        "variables" : "6"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}

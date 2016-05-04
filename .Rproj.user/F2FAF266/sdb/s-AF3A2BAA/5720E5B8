@@ -1,0 +1,25 @@
+{
+    "contents" : "",
+    "created" : 1462273447024.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5720E5B8",
+    "lastKnownWriteTime" : 21392300099829876,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "6e2ik2a8k3",
+        "caption" : "links",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=links&cache_key=6e2ik2a8k3",
+        "displayedObservations" : 5885,
+        "environment" : "",
+        "object" : "links",
+        "totalObservations" : 5885,
+        "variables" : 1
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
