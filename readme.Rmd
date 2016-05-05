@@ -1,0 +1,7 @@
+##Readme
+
+[EIS](http://eelnoud.valitsus.ee/main "http://eelnoud.valitsus.ee/main")ist info välja kraapimise skrpit. Kuna normaalsel kujul neid andmeid ei õnnestu saada ning tegemist on avalike andmetega jäi ainsaks valikuks andmete välja kraapimine. 
+
+Skriptida edasi minemiseks lae sisse juba loetud andmed (data(1).RData ja pealk(1).RData). Seal on sisse laetud 2459 algse lingi info. Veel tuleb välja puhastada duplikaadid.
+
+Tegemist on kiire häkiga, mille kood tuleb alles normaalseks kirjutada ja kontrollida!

@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1462423899558.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C6EA4703",
+    "lastKnownWriteTime" : 31525678432190511,
+    "last_content_update" : 1462423899558,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "vkivf9iqtf",
+        "caption" : "mittejum",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=mittejum&cache_key=vkivf9iqtf",
+        "displayedObservations" : "12594",
+        "environment" : "",
+        "object" : "mittejum",
+        "totalObservations" : "12594",
+        "variables" : "8"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
